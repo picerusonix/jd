@@ -5,7 +5,7 @@ gra::~gra()
 gra::gra()
 {}
 
-void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool pelenekran)
+void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool pelenekran) //pentla gry
 {
 	int flags = 0;
 	if (pelenekran)
@@ -16,7 +16,7 @@ void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
 		std::cout << "subsystem initia" << std::endl;
-		window = SDL_CreateWindow(title, xpos, ypos, szer, wysoko, flags);
+		window = SDL_CreateWindow(title, xpos, ypos, szer, wysoko, flags); //okno podajesz parametry okna
 		if (window)
 		{
 			std::cout << "window created" << std::endl;
@@ -39,7 +39,7 @@ void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool
 	}
 }
 
-void gra::update()
+void gra::update() //rzeczy które mają być robione podczas gdy ejst odpalone
 {}
 void gra::render()
 {
@@ -54,11 +54,11 @@ void gra::render()
 void gra::handleevent()
 {
 	SDL_Event event;
-	SDL_PollEvent(&event);
+	SDL_PollEvent(&event); 
 	switch (event.type)
 	{
 	case SDL_QUIT:
-			dziala = false;
+			dziala = false;// exit button w górym rogu
 			break;
 	default:
 		break;
@@ -67,7 +67,7 @@ void gra::handleevent()
 
 }
 
-void gra::clear()
+void gra::clear() 
 {
 
 	SDL_DestroyWindow(window);
