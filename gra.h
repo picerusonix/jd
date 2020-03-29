@@ -9,13 +9,13 @@ public:
 	~gra();
 
 
-	void init(const char* title, int xpos, int ypos, int szer, int wysoko, bool pelenekran);
+	void init(const char* title, int xpos, int ypos, int szer, int wysoko, bool pelenekran);  //okno
 
-	void update();
-	void render();
-	void clear();
+	void update();   
+	void render();  
+	void clear();  //czyści okno
 	void handleevent();
-	bool running() { return dziala; }
+	bool running() { return dziala; } //sprawdza czy jest odpalone
 	
 
 
