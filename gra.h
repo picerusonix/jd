@@ -2,7 +2,7 @@
 #define gra_h
 #include "SDL.h"
 #include <iostream>
-
+#define SDL_MAIN_HANDLED
 class gra {
 public:
 	gra();
@@ -20,7 +20,7 @@ public:
 
 
 private:
-
+	int licznik;
 	bool dziala;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
