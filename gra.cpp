@@ -1,5 +1,5 @@
 #include "gra.h"
-
+#define SDL_MAIN_HANDLED
 gra::~gra()
 {}
 gra::gra()
@@ -15,18 +15,14 @@ void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool
 	}
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
-		std::cout << "subsystem initia" << std::endl;
+		
 		window = SDL_CreateWindow(title, xpos, ypos, szer, wysoko, flags);
-		if (window)
-		{
-			std::cout << "window created" << std::endl;
-
-		}
+		
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer)
 		{
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-			std::cout << "window renderer" << std::endl;
+			SDL_SetRenderDrawColor(renderer, 25, 25, 10, 10);
+			
 		}
 
 		dziala = true;
@@ -40,7 +36,10 @@ void gra::init(const char* title, int xpos, int ypos, int szer, int wysoko, bool
 }
 
 void gra::update()
-{}
+{
+	licznik++;
+
+}
 void gra::render()
 {
 
@@ -73,6 +72,6 @@ void gra::clear()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	std::cout << "game cleaned" << std::endl;
+	
 
 }
